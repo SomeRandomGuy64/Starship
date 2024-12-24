@@ -300,7 +300,8 @@ void DrawSettingsMenu(){
             }
         } // END FPS Slider
 
-        if (Ship::Context::GetInstance()->GetWindow()->GetWindowBackend() == Ship::WindowBackend::FAST3D_DXGI_DX11) {
+        if (Ship::Context::GetInstance()->GetWindow()->GetWindowBackend() == Ship::WindowBackend::FAST3D_DXGI_DX11 ||
+            Ship::Context::GetInstance()->GetWindow()->GetWindowBackend() == Ship::WindowBackend::FAST3D_SDL_OPENGL) {
             UIWidgets::Spacer(0);
             if (ImGui::Button("Match Refresh Rate")) {
                 int hz = Ship::Context::GetInstance()->GetWindow()->GetCurrentRefreshRate();
